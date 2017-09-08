@@ -13,7 +13,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rv1,rv2;
-    private List<String> data;
+    private List<String> data1,data2;
     private RecyclerViewAdapter adapter1,adapter2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +22,16 @@ public class MainActivity extends AppCompatActivity {
 
         rv1 = (RecyclerView) findViewById(R.id.rv1);
         rv2 = (RecyclerView) findViewById(R.id.rv2);
-        data = new ArrayList<>();
+        data1 = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            data.add("安卓进阶之路"+i);
+            data1.add("安卓进阶之路"+i);
         }
-        adapter1 = new RecyclerViewAdapter(data);
-        adapter2 = new RecyclerViewAdapter(data);
+        data2 = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            data2.add("安卓进阶之路"+i);
+        }
+        adapter1 = new RecyclerViewAdapter(data1);
+        adapter2 = new RecyclerViewAdapter(data2);
 
         rv1.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         rv1.addItemDecoration(new DividerListItemDecoration(MainActivity.this,DividerListItemDecoration.VERTICAL_LIST));
